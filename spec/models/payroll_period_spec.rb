@@ -40,7 +40,7 @@ RSpec.describe PayrollPeriod, type: :model do
       new_period = PayrollPeriod.new(start_date: '2023-07-17', end_date: '2023-07-31')
 
       expect(new_period).not_to be_valid
-      expect(new_period.errors[:start_date]).to include('must be the day after the end date of the most recent payroll period')
+      expect(new_period.errors[:start_date]).to include('must be the day after the end date of the previous payroll period')
     end
 
     it 'is valid when there is no previous payroll period' do
