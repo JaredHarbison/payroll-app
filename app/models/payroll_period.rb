@@ -28,18 +28,17 @@ class PayrollPeriod < ApplicationRecord
     ).where.not(id: id)
 
     if overlaps.exists? 
-      errors.add(:base, "this payroll period overlaps with existing periods")
+      errors.add(:base, "This payroll period overlaps with existing periods")
     end
   end
 
   def no_gap_with_previous_period
     return unless start_date && end_date
 
-    most_recent_period = PayrollPeriod.order(end_date: :desc).first
-    return unless most_recent_period
+    most_recent_period = PayrollPeriod.order(end_date: :desc).where.not(id: id).first
 
-    if most_recent_period.end_date + 1.day != start_date
-      errors.add(:start_date, "must be the day after the end date of the most recent payroll period")
+    if most_recent_period && most_recent_period.end_date + 1.day != start_date
+      errors.add(:start_date, "must be the day after the end date of the previous payroll period")
     end
   end
   
