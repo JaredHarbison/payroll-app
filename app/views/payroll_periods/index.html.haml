@@ -1,0 +1,23 @@
+.card-body
+  .nav-buttons 
+    = link_to 'Create New', new_payroll_period_path, class: "btn btn-primary"
+    - if PayrollPeriod.current_period.present?
+      = link_to 'Edit Current', edit_payroll_period_path(PayrollPeriod.current_period), class: "btn btn-secondary"
+
+  %h2 Your Payroll Periods
+  %table
+    %thead
+      %tr
+        %th Start Date
+        %th End Date
+        %th.action-column Actions
+    %tbody
+      - @payroll_periods.each do |period|
+        %tr
+          %td= period.start_date.strftime("%m-%d-%Y")
+          %td= period.end_date.strftime("%m-%d-%Y")
+          %td.action-column
+            .action-container
+              = link_to 'Edit', edit_payroll_period_path(period), class: "btn btn-secondary"
+              = form_with url: payroll_period_path(period), method: :delete, local: true, data: { controller: "confirm-delete" } do |form|
+                = form.submit 'Delete', class: "btn btn-warning", data: { action: "confirm-delete#handleConfirm" }
