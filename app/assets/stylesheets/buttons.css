@@ -1,0 +1,89 @@
+.btn {
+    background-color: transparent;
+    border: 2px solid transparent;
+    border-radius: .25rem;
+    color: var(--blue-dark-1);
+    cursor: pointer;
+    display: inline-block;
+    font-size: .875rem;
+    font-weight: 400;
+    line-height: 1.5;
+    padding: .375rem 1rem;
+    user-select: none;
+    text-align: center;
+    text-decoration: none;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    vertical-align: middle;
+    width: fit-content;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+}
+
+.btn-primary {
+    background-color: var(--blue-1);
+    border-color: var(--blue-1);
+    color: var(--white);
+}
+
+.btn-primary:focus {
+    box-shadow: 0 0 0 .2rem var(--blue-4);
+    outline: none; 
+}
+
+.btn-primary:hover {
+    color: var(--white);
+    background-color: var(--blue-2);
+    border-color: var(--blue-3);
+}
+
+.btn-secondary {
+    color: var(--blue-dark-1);
+    background-color: var(--blue-light-1);
+    border-color: var(--blue-light-1);
+}
+
+.btn-secondary:focus {
+    box-shadow: 0 0 0 .2rem var(--blue-light-4);
+    outline: none; 
+}
+
+.btn-secondary:hover {
+    color: var(--blue-dark-1);
+    background-color: var(--blue-light-2);
+    border-color: var(--blue-light-3);
+}
+
+.btn-success {
+    color: var(--white);
+    background-color: var(--green-1);
+    border-color: var(--green-1);
+}
+
+.btn-success:focus {
+    box-shadow: 0 0 0 .2rem var(--green-4);
+    outline: none; 
+}
+
+.btn-success:hover {
+    color: var(--white);
+    background-color: var(--green-2);
+    border-color: var(--green-3);
+}
+
+.btn-warning {
+    color: var(--blue-dark-1);
+    background-color: var(--yellow-1);
+    border-color: var(--yellow-1);
+}
+
+.btn-warning:focus {
+    box-shadow: 0 0 0 .2rem var(--yellow-4);
+    outline: none; 
+}
+
+.btn-warning:hover {
+    color: var(--blue-dark-1);
+    background-color: var(--yellow-2);
+    border-color: var(--yellow-3);
+}

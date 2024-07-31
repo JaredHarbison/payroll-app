@@ -1,0 +1,22 @@
+.threads {
+    position: absolute !important;
+    z-index: 0;
+}
+
+.threads-left {
+    left: -75px;
+    right: 0;
+    top: -75px;
+    width: 40vw;
+}
+
+.threads-center {
+    right: 0;
+    top: 100px; 
+    width: 40vw;
+}
+
+.threads-right {
+    transform: scaleX(-1);top: 25px;
+    width: 110vw;
+}

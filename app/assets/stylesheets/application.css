@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
+ @import "basics";
+ @import "buttons";
+ @import "cards";
+ @import "colors"; 
+ @import "forms";
+ @import "tables";
+ @import "threads"; 
