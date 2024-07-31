@@ -1,0 +1,5 @@
+.card-body
+  .nav-buttons
+    = link_to 'Back', payroll_periods_path, class: "btn btn-secondary"
+  %h2= "Edit Payroll Period #{@payroll_period.id}"
+  = render 'form'
