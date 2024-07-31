@@ -1,0 +1,18 @@
+= form_with(model: @payroll_period, local: true) do |form|
+  - if @payroll_period.errors.any?
+    .pp-form-errors
+      %h2.pp-form-errors__title= "#{pluralize(@payroll_period.errors.count, 'error')} invalidated this payroll period:"
+      %ul.pp-form-errors__list
+        - @payroll_period.errors.full_messages.each do |message|
+          %li.pp-form-errors__item= message
+
+  .pp-form-field
+    = form.label :start_date, class: 'pp-form-field__label'
+    = form.date_field :start_date, class: 'pp-form-field__input'
+
+  .pp-form-field
+    = form.label :end_date, class: 'pp-form-field__label'
+    = form.date_field :end_date, class: 'pp-form-field__input'
+
+  .pp-form-actions
+    = form.submit 'Save', class: 'btn btn-primary'
