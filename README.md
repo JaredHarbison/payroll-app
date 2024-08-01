@@ -14,4 +14,5 @@ Create customizable payroll periods that do not overlap or create date coverage 
 - git clone https://github.com/JaredHarbison/payroll-app.git
 - cd payroll-app
 - bundle install
+- rails db:migrate
 - rails s
